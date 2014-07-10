@@ -29,4 +29,8 @@ public class Item {
 		return check;
 	}
 	
+	public void setChecked(boolean check){
+		this.check = check;
+	}
+	
 }

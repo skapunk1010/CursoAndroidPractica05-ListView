@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	private ListView listView;
-	private ArrayAdapter<String> adapter;
-//	private ArrayList<String> lista;
+	private ListViewAdapter adapter;
+	private ArrayList<Item> lista;
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +24,21 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		//Declarar sus datos
-		String[] valores = {"Mexico", "Japon", "Brazil","Alemania","Argentina","Holanda"};
+		lista = new ArrayList<Item>();
+		lista.add(new Item("Austria","Está en Europa",R.drawable.austria,true));
+		lista.add(new Item("Bolivia","Está en sudamérica",R.drawable.bolivia,false));
+		lista.add(new Item("Bulgaria","Está en Europa",R.drawable.bulgaria,true));
+		lista.add(new Item("Camerun","Esta en áfrica",R.drawable.cameroon,false));
+		lista.add(new Item("Costa rica", "Está en el caribe",R.drawable.costa_rica,true));
+		lista.add(new Item("Guatemala", "Está en centroamérica",R.drawable.guatemala,false));
+		lista.add(new Item("Iran", "Está en asia",R.drawable.iran,true));
+		lista.add(new Item("Israel","Está en medio oriente",R.drawable.israel,false));
+		lista.add(new Item("Jamaica","Es una isla", R.drawable.jamaica,true));
+		lista.add(new Item("Japon","Es una isla y está en asia", R.drawable.japan,false));
 		
 		//Declarar el adapter
-		adapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.item,R.id.txtItem,valores);
+		//adapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.item,R.id.txtTitulo,valores);
+		adapter = new ListViewAdapter(this,lista);
 		
 		//Asignar adapter a listView
 		listView = (ListView) findViewById(R.id.listView1);

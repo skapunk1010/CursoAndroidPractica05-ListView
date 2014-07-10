@@ -15,6 +15,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:src="@drawable/ic_launcher" />
 
     <TextView
@@ -23,22 +25,29 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/imageView"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:text="TextView" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtTitulo"
+        android:layout_marginRight="30dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
     <TextView
         android:id="@+id/txtDescripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_alignLeft="@+id/txtTitulo"
+        android:layout_alignBottom="@+id/checkBox1"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/imageView"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:text="TextView" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/txtTitulo"
-        android:layout_marginRight="30dp" />
 
 </RelativeLayout>
